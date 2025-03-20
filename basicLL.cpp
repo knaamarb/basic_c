@@ -28,6 +28,7 @@ void inHead(int priority){
     }
 }
 
+
 void inTail(int priority){
     struct node *tmp = newNode(priority);
     if(tail==NULL){
@@ -53,6 +54,17 @@ void popTail(){
     free(tmp);
 }
 
+struct node *search(int priority){
+    struct node *curr = head;
+    while (curr!=NULL&&curr->priotity != priority)
+    {
+        curr = curr->next;
+    }
+    if (curr == NULL) return NULL;    
+    return curr;
+    
+}
+
 
 void printAll(){
     struct node *tmp = head;
@@ -61,7 +73,6 @@ void printAll(){
         tmp = tmp->next;
     }
 }
-
 
 int main(){
     inTail(10);
