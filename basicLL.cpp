@@ -51,7 +51,7 @@ void pushMid_sortA(int key){
         return;
     }
 	
-	if(key<head->key){
+	if(key<=head->key){
     	pushHead(key);
     	return;
 	}else if(key>tail->key){
@@ -96,7 +96,7 @@ void popTail(){
     	return;
 	}else{
     	struct node *tmp = tail;
-		tail = tail->prev;
+	    tail = tail->prev;
 	    tail->next = NULL;
 	    tmp->prev = NULL;
 	    free(tmp);
@@ -148,7 +148,9 @@ struct node *search(int key){
 void printAll(){
     struct node *tmp = head;
     while(tmp!=NULL){
+
 		printf("%d",tmp->key);
+		
         if(tmp->next != NULL){
         	printf(" -> ");	
 		}
