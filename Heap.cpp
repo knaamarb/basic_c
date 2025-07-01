@@ -91,7 +91,7 @@ void treatNextPatient(){
         
     }
     
-    free(heap[1]);
+    free(tmp);
 }
 void peekNextPatient(){
     printf("\nPatient ID: %d\nPatient Name: %s\nPriority: %d\n", heap[1]->patientID, heap[1]->name, heap[1]->priority);
