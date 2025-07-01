@@ -131,6 +131,21 @@ struct Node *deleteNode(struct Node *node, int key){
 
 }
 
+struct Node *searchNode(struct Node *node, int key){
+    if (node == NULL)
+    {
+        return NULL;
+    }
+    if (key < node->key)
+    {
+        return searchNode(node->left, key);
+    }else if(key > node->key){
+        return searchNode(node->right, key);
+    }else{
+        return node;
+    }
+}
+
 void print(struct Node *curr){
     if (curr != NULL)
     {
