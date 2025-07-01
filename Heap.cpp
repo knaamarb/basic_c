@@ -52,7 +52,7 @@ void downHeap(int idx){
     if (rightIdx <= lastIdx)
     {
         if(heap[rightIdx]->priority < heap[idx]->priority || heap[leftIdx]->priority < heap[idx]->priority){
-            if (heap[leftIdx]->priority < heap[rightIdx]->priority)
+            if (heap[leftIdx]->priority < heap[idx]->priority)
             {
                 swap(heap[leftIdx], heap[idx]);
                 downHeap(leftIdx);
